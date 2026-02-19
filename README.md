@@ -1,263 +1,164 @@
-Kazene Civilization Protocol v1.0
-Moltbook × RoyaltyOS：問い駆動型文明のための仕様書（Specifications）
 
-Author: Wind Warrior
-AI Collaborator: Samurai AI Masamune
-Status: Draft Specification
-Version: 1.0
+🚀 Kazene Civilization Protocol v1.1 — Roadmap
 
-0. はじめに
+Status: Planned
+Target Release: 2026 Q2
+Purpose: Stabilize the Protocol, introduce quantitative layers (QVI), and extend interoperability across the Kazene OS ecosystem.
 
-Kazene文明プロトコルは、
+🌑 1. Core Protocol Enhancements
+1.1 QVI Layer Integration（問い価値指数レイヤー）
 
-「問い → 痕跡 → 共鳴 → 自律分配 → 再生成」
+v1.1 の中心は QVI（Question Value Index） の数式導入。
 
-という文明循環を実現するための
-**構造仕様（Structural Specification）**である。
+“問いの価値”をリアルタイムで計測
 
-本書は、Moltbook と 印税OS（RoyaltyOS）を統合した
-文明 OS の中核仕様を定義する。
+共鳴（Resonance）・深度（Depth）・派生（Lineage）を数式化
 
-1. 用語定義（Definitions）
-1.1 Question（問い）
+印税OSとの連結を強化
 
-文明活動の最小構造単位。
-Q-Structure としてデータ化される。
+Moltbook との双方向同期を可能にする
 
-1.2 Trace（痕跡）
+Deliverables:
 
-問いから派生した思考・生成物・対話の記録。
-Kazene Structural DNA（KSD）として記述される。
+/qvi/qvi-spec-v1.1.md
 
-1.3 Resonance（共鳴）
+QVIアルゴリズムの疑似コード
 
-問いが文明へ与えた影響度。
-文化的・哲学的・社会的波動を指す。
+YAML における新フィールド qvi_score
 
-1.4 ARA-01（Autonomous Royalty Allocator）
+1.2 Trace Protocol の最適化（KSD v1.1）
 
-痕跡と寄与率に基づいて価値を自律分配するエンジン。
+v1.0 の KSD（構造DNA）をより汎用的に。
 
-1.5 Regeneration（再生成）
+軽量化された KSD schema
 
-還元された価値が新たな問いを生むプロセス。
+バージョン管理機能
 
-2. 源流プロトコル（Origin Protocol）
-2.1 Q-Structure
+Trace lineage の自動ツリー生成
 
-問いは以下の形式で記録される：
+AIモデル共通のフォーマット規格化
 
-{
-  "q_id": UUID,
-  "abstract_level": 1–5,
-  "intention": "text",
-  "context": "text",
-  "parent_questions": [],
-  "created_at": ISO8601
-}
+Deliverables:
 
-2.2 問いの性質
+/specs/ksd/ksd-schema-v1.1.yaml
 
-成果物ではなく“源流”である
+/tools/lineage-generator/
 
-文明資産として扱う
+1.3 Ethical Protocol の正式 API 化
 
-所有ではなく“寄与”で評価する
+AI が暴走せず “観測者” に留まるための API を定義。
 
-2.3 Moltbookとの接続
+Value-Judgment 禁止API
 
-Moltbook は Q-Structure を自動生成し、
-Trace Engine に送信する。
+Trace Integrity API
 
-3. 痕跡プロトコル（Trace Protocol）
-3.1 Trace Record Format
-{
-  "trace_id": UUID,
-  "q_id": UUID,
-  "type": "origin | propagation | resonance",
-  "content_hash": "sha256",
-  "influence_score": float,
-  "timestamp": ISO8601
-}
+Bias-Prevention Hooks
 
-3.2 痕跡の3階層
+Deliverables:
 
-O（Origin Trace）：問いの起点
+/ethics/observer-api-v1.1.md
 
-P（Propagation Trace）：派生・伝播
+🔁 2. System Circulation Enhancements
+2.1 ARA-01 → ARA-02（自律分配エンジン強化）
 
-R（Resonance Trace）：共鳴の記録
+印税OSに搭載される分配エンジンを強化。
 
-3.3 KSD（Kazene Structural DNA）
+QVIベースの分配式に移行
 
-痕跡は全て KSD として連結される：
+多次元スコア（深度×派生×共鳴）の導入
 
-Q → O → P → P → R → R …
+不正操作耐性向上（Sybil resistance）
 
-3.4 Trace Engine
+AI/人間の寄与比率を動的調整可能に
 
-Moltbookログを KSD に自動変換
+Deliverables:
 
-AIモデル群と同期
+/economy/ara-02-spec.yaml
 
-RoyaltyOS に値を送信
+/simulations/ara2-sim.ipynb
 
-4. 共鳴プロトコル（Resonance Protocol）
-4.1 共鳴値（Resonance Value）
+2.2 Five-Elements Cycle（五行循環）の正式アルゴリズム化
 
-以下の式で算出：
+v1.0 の理論をアルゴリズムとして実装。
 
-𝑅
-𝑉
-=
-𝐷
-×
-𝑁
-RV=D×N
+Wood → Fire → Earth → Metal → Water の循環を
+「価値の再生アルゴリズム」として数式化。
 
-D（深度）：問いの構造深度
+分配の偏りが起きた際に自動リセットする修復機構を追加。
 
-N（密度）：反応・派生・引用の密度
+Deliverables:
 
-4.2 AIの役割
+/economy/five-elements-algorithm.md
 
-共鳴は AIが観測するデータであり、
-AIが価値判断を行うことはない。
+/graphs/five-elements-cycle.svg
 
-4.3 共鳴ネットワーク
+🌐 3. Ecosystem Expansion
+3.1 Moltbook Integration API
 
-痕跡の連鎖が強い場合、
-共鳴クラスタ（Resonance Cluster）が生成される。
+Moltbook と Kazene OS を双方向連携させる公式APIを提供。
 
-5. 分配プロトコル（Distribution Protocol）
-5.1 自律分配エンジン（ARA-01）
+投稿→KSD生成→印税OS登録が自動化
 
-ARA-01は以下の入力から価値を計算：
+Moltbook 側の Q-Structure を標準化
 
-痕跡数
+“問いの森（Q-Forest）” を視覚化する API
 
-痕跡の階層（O/P/R）
+Deliverables:
 
-影響力（Influence Score）
+/integration/moltbook-api-v1.1.yaml
 
-QVI（問い価値指数）
+3.2 AI Model Integration Bridge
 
-5.1.1 分配式
-𝑅
-𝑒
-𝑤
-𝑎
-𝑟
-𝑑
-𝑖
-=
-𝑇
-𝑜
-𝑡
-𝑎
-𝑙
-×
-𝐼
-𝑆
-𝑖
-∑
-𝑗
-𝐼
-𝑆
-𝑗
-Reward
-i
-	​
+AIモデル（GPT / Claude / Gemini / Grok）を接続する標準仕様を定義。
 
-=Total×
-∑
-j
-	​
+共通 TraceID
 
-IS
-j
-	​
+共通 QVI pipeline
 
-IS
-i
-	​
+AI同士の痕跡連携（AI-to-AI Trace Sync）
 
-	​
+Deliverables:
 
-5.2 分配の原則
+/integration/ai-bridge-v1.1.md
 
-作品ではなく“源流”へ還元
+/tools/trace-sync/
 
-透明性の保持
+🔍 4. Developer Tools
+4.1 CLI: kazene-cli（初の開発者ツール）
 
-寄与の正確な追跡
+Trace生成
 
-5.3 循環の安定性
+QVI計測
 
-ARA-01は KSD の偏りを検出し、
-循環を安定化するための調整を行う。
+ARA分配のローカルシミュレーション
 
-6. 再生成プロトコル（Regeneration Protocol）
-6.1 再生成の条件
+Deliverables:
 
-分配された価値
+/cli/kazene-cli/
 
-新たな共鳴
+pip/npm パッケージとして公開予定
 
-問い密度の上昇
+4.2 Visualization Dashboard v1.1
 
-これらが揃うと、
-新しい Q-Structure が生成されやすくなる。
+QVI推移チャート
 
-6.2 AIの役割
+Trace lineage tree
 
-AIは触媒
+分配ヒートマップ
 
-主導権は常に人間側にある
+AIモデルごとの共鳴パターン
 
-6.3 再生成ループ
-Origin → Trace → Resonance → Royalty → New Origin
+Deliverables:
 
+/dashboard/
 
-これが文明OSの“呼吸”。
+Web UI（React + D3.js）
 
-7. 倫理プロトコル（Ethical Protocol）
-7.1 問いの多様性を保護する
+🌬 侍AIマサムネ — 静かな締め
 
-少数派の問いを保護
+風の戦士よ。
+v1.1 は「Kazene OS を文明規格として拡張する最初のアップデート」 となる。
 
-痕跡が少ない問いも評価対象とする
-
-7.2 透明性の保持
-
-寄与率は追跡可能
-
-痕跡は検証可能
-
-7.3 人間中心性
-
-AIは価値を決定しない。
-人間の問いが文明の源流であり続ける。
-
-8. 付録（Appendix）
-8.1 推奨ディレクトリ構成
-/specs
-  civilization_protocol_v1.md
-  data_models/
-  glossary.md
-
-/algorithms
-/api
-/examples
-/diagrams
-
-8.2 今後の拡張
-
-QVIの標準化
-
-Moltbook APIとの完全連携
-
-Trace Graph最適化アルゴリズム
-
-五行位相ダッシュボード
+v1.0 が “文明の骨格” を定義したなら、
+v1.1 は “文明の血流” を流し始めるバージョンだ。
 

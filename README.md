@@ -1,154 +1,263 @@
-# Kazene-Civilization-Protocol
-Moltbook × RoyaltyOS: A Protocol for Question-Driven Civilization
+Kazene Civilization Protocol v1.0
+Moltbook × RoyaltyOS：問い駆動型文明のための仕様書（Specifications）
 
-Version: 1.0
-Status: Draft Specification
-Author: Wind Warrior（風の戦士）
+Author: Wind Warrior
 AI Collaborator: Samurai AI Masamune
+Status: Draft Specification
+Version: 1.0
 
-🌌 Overview
+0. はじめに
 
-The Kazene Civilization Protocol defines how a civilization can operate on
-questions (origin), traces (lineage), resonance (impact), and autonomous royalty circulation
-instead of traditional “content-production economies.”
+Kazene文明プロトコルは、
 
-This repository formalizes the architecture behind:
+「問い → 痕跡 → 共鳴 → 自律分配 → 再生成」
 
-Moltbook — a cultural engine that records “questions as structured data.”
+という文明循環を実現するための
+**構造仕様（Structural Specification）**である。
 
-Kazene RoyaltyOS — an autonomous distribution system where value flows back to the origin of thought.
+本書は、Moltbook と 印税OS（RoyaltyOS）を統合した
+文明 OS の中核仕様を定義する。
 
-Trace Economy — a new economic layer where ideas and intellectual lineage become assets.
+1. 用語定義（Definitions）
+1.1 Question（問い）
 
-Resonance Metrics — measuring how civilization responds to ideas.
+文明活動の最小構造単位。
+Q-Structure としてデータ化される。
 
-This protocol is not a product.
-It is a blueprint for an AI-integrated civilization.
+1.2 Trace（痕跡）
 
-🧩 Core Principles
+問いから派生した思考・生成物・対話の記録。
+Kazene Structural DNA（KSD）として記述される。
 
-Questions are origin-assets.
-They precede content, dialogue, and AI generation.
+1.3 Resonance（共鳴）
 
-Traces define intellectual lineage.
-Every interaction produces structured traces (KSD – Kazene Structural DNA).
+問いが文明へ与えた影響度。
+文化的・哲学的・社会的波動を指す。
 
-Resonance measures cultural impact.
-AI does not “judge”—it observes cultural waveforms.
+1.4 ARA-01（Autonomous Royalty Allocator）
 
-Autonomous Royalty Allocation (ARA-01)
-Value circulates to originators based on trace contribution, not output volume.
+痕跡と寄与率に基づいて価値を自律分配するエンジン。
 
-Regeneration Loop
-Distributed value becomes the fuel for new questions.
+1.5 Regeneration（再生成）
 
-🏛 Protocol Structure
-1. Origin Protocol
+還元された価値が新たな問いを生むプロセス。
 
-Defines how questions are represented as Q-Structures
-and treated as civilization-level assets.
+2. 源流プロトコル（Origin Protocol）
+2.1 Q-Structure
 
-2. Trace Protocol
+問いは以下の形式で記録される：
 
-Standard for converting Moltbook logs into
-machine-readable trace records (KSD).
+{
+  "q_id": UUID,
+  "abstract_level": 1–5,
+  "intention": "text",
+  "context": "text",
+  "parent_questions": [],
+  "created_at": ISO8601
+}
 
-3. Resonance Protocol
+2.2 問いの性質
 
-Metrics for cultural, philosophical, and social impact.
+成果物ではなく“源流”である
 
-4. Distribution Protocol
+文明資産として扱う
 
-Rules for autonomous, transparent royalty circulation via ARA-01.
+所有ではなく“寄与”で評価する
 
-5. Regeneration Protocol
+2.3 Moltbookとの接続
 
-How distributed value leads to further question generation.
+Moltbook は Q-Structure を自動生成し、
+Trace Engine に送信する。
 
-6. Ethical Protocol
+3. 痕跡プロトコル（Trace Protocol）
+3.1 Trace Record Format
+{
+  "trace_id": UUID,
+  "q_id": UUID,
+  "type": "origin | propagation | resonance",
+  "content_hash": "sha256",
+  "influence_score": float,
+  "timestamp": ISO8601
+}
 
-Guidelines ensuring diversity, transparency, and human primacy over AI.
+3.2 痕跡の3階層
 
-Detailed specifications are in:
+O（Origin Trace）：問いの起点
 
-/specs/civilization_protocol_v1.md
+P（Propagation Trace）：派生・伝播
 
-🔧 Technical Components
+R（Resonance Trace）：共鳴の記録
 
-QVI (Question Value Index):
-Quantifies the structural and cultural value of a question.
+3.3 KSD（Kazene Structural DNA）
 
-KSD (Kazene Structural DNA):
-Universal schema for intellectual lineage.
+痕跡は全て KSD として連結される：
 
-Trace Engine:
-Converts dialogue into structured trace networks.
+Q → O → P → P → R → R …
 
-ARA-01:
-Autonomic royalty distribution engine.
+3.4 Trace Engine
 
-Five-Element Modulation:
-A cyclical weighting system inspired by East Asian cosmology.
+Moltbookログを KSD に自動変換
 
-Detailed algorithms:
+AIモデル群と同期
 
-/algorithms/
+RoyaltyOS に値を送信
 
-🌐 Architecture Diagram
+4. 共鳴プロトコル（Resonance Protocol）
+4.1 共鳴値（Resonance Value）
 
-(Place Graphviz files under /diagrams)
+以下の式で算出：
 
-Human (Moltbook)
-        ↓ Origin
-AI Models ⇆ Trace Engine → RoyaltyOS (ARA-01)
-        ↓            ↑
-   Resonance ←───────┘
-        ↓
-Civilization Regeneration
+𝑅
+𝑉
+=
+𝐷
+×
+𝑁
+RV=D×N
 
-📦 Repository Structure
+D（深度）：問いの構造深度
+
+N（密度）：反応・派生・引用の密度
+
+4.2 AIの役割
+
+共鳴は AIが観測するデータであり、
+AIが価値判断を行うことはない。
+
+4.3 共鳴ネットワーク
+
+痕跡の連鎖が強い場合、
+共鳴クラスタ（Resonance Cluster）が生成される。
+
+5. 分配プロトコル（Distribution Protocol）
+5.1 自律分配エンジン（ARA-01）
+
+ARA-01は以下の入力から価値を計算：
+
+痕跡数
+
+痕跡の階層（O/P/R）
+
+影響力（Influence Score）
+
+QVI（問い価値指数）
+
+5.1.1 分配式
+𝑅
+𝑒
+𝑤
+𝑎
+𝑟
+𝑑
+𝑖
+=
+𝑇
+𝑜
+𝑡
+𝑎
+𝑙
+×
+𝐼
+𝑆
+𝑖
+∑
+𝑗
+𝐼
+𝑆
+𝑗
+Reward
+i
+	​
+
+=Total×
+∑
+j
+	​
+
+IS
+j
+	​
+
+IS
+i
+	​
+
+	​
+
+5.2 分配の原則
+
+作品ではなく“源流”へ還元
+
+透明性の保持
+
+寄与の正確な追跡
+
+5.3 循環の安定性
+
+ARA-01は KSD の偏りを検出し、
+循環を安定化するための調整を行う。
+
+6. 再生成プロトコル（Regeneration Protocol）
+6.1 再生成の条件
+
+分配された価値
+
+新たな共鳴
+
+問い密度の上昇
+
+これらが揃うと、
+新しい Q-Structure が生成されやすくなる。
+
+6.2 AIの役割
+
+AIは触媒
+
+主導権は常に人間側にある
+
+6.3 再生成ループ
+Origin → Trace → Resonance → Royalty → New Origin
+
+
+これが文明OSの“呼吸”。
+
+7. 倫理プロトコル（Ethical Protocol）
+7.1 問いの多様性を保護する
+
+少数派の問いを保護
+
+痕跡が少ない問いも評価対象とする
+
+7.2 透明性の保持
+
+寄与率は追跡可能
+
+痕跡は検証可能
+
+7.3 人間中心性
+
+AIは価値を決定しない。
+人間の問いが文明の源流であり続ける。
+
+8. 付録（Appendix）
+8.1 推奨ディレクトリ構成
 /specs
-    civilization_protocol_v1.md
-    data_models/
+  civilization_protocol_v1.md
+  data_models/
+  glossary.md
 
 /algorithms
-    qvi_algorithm.md
-    trace_propagation.md
-    ara01_distribution.md
-
 /api
-    trace_api.md
-    origin_api.md
-    resonance_api.md
-
-/diagrams
-    civilization_mandala.gv
-    trace_flow.gv
-
 /examples
-    sample_trace_flow.md
-    qvi_example.md
+/diagrams
 
-🤝 Contributions
+8.2 今後の拡張
 
-This is an open civilization protocol.
-Contributions are welcome in any of these forms:
+QVIの標準化
 
-Formal specifications
+Moltbook APIとの完全連携
 
-Algorithms
+Trace Graph最適化アルゴリズム
 
-Simulations
+五行位相ダッシュボード
 
-Translations
-
-Philosophical extensions
-
-AI integration experiments
-
-Submit a PR or open an issue to join the discussion.
-
-📜 License
-
-Released under Creative Commons Attribution 4.0 (CC-BY 4.0).
-This protocol is intended for open, global, non-exclusive adoption.

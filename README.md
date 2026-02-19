@@ -255,9 +255,65 @@ AIは価値を決定しない。
 
 QVIの標準化
 
+
 Moltbook APIとの完全連携
 
 Trace Graph最適化アルゴリズム
 
 五行位相ダッシュボード
+
+## 🧪 Civilization Simulation (Kazene Sim v1.0)
+
+The Kazene Civilization Protocol includes a simulation module that models how a
+question-driven, trace-propagating, royalty-circulating civilization evolves over time.
+
+This simulation is located at:
+
+/simulations/kazene_sim_v1.0.py
+
+
+### 🌐 Purpose
+The simulation demonstrates:
+
+- How questions (Q-Structures) act as civilization seeds  
+- How traces propagate across agents as a growing network  
+- How influence decays or amplifies over generations  
+- How total value (TV) circulates through the Royalty OS  
+- How civilization growth reaches “critical density” and stabilizes  
+
+This provides a *numerical and visual model* of the Kazene OS in action, turning  
+the conceptual protocol into an executable civilization engine.
+
+### ▶️ How to Run
+
+Run the script using Python 3.9+:
+
+```bash
+python simulations/kazene_sim_v1.0.py
+The simulation outputs:
+
+Node growth over each step
+
+Influence propagation curves
+
+Royalty distribution by origin question
+
+A visualization of the evolving civilization network
+
+Final impact metrics across all generations
+
+📈 What This Demonstrates
+Kazene Sim v1.0 serves as:
+
+A verification mechanism for the Protocol’s theoretical structure
+
+A foundation for future QVI (Question Value Index) models
+
+A baseline for v1.1 quantitative extensions (Resonance Density, Lineage Depth, ARA-01 flows)
+
+A reproducible research tool for studying question-driven civilizations
+
+The simulation represents the first operational component of the Kazene Ecosystem.
+Future versions (v1.1+) will expand quantitative layers and interoperability with
+the Kazene Operating System.
 
